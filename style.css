@@ -1403,7 +1403,7 @@ opacity: 0.5;
 .comments{
     width: 100%;
     height: 100%;
-    background-color: pink;
+    /* background-color: pink; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1411,16 +1411,190 @@ opacity: 0.5;
 
 .comments_wrap {
     width: 80%;
-    height: 90%;
-    background-color: bisque;
+    height: 70%;
+    /* background-color: bisque; */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5%;
 }
 .comments_slider {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* background-color: aquamarine; */
+    /* margin-left: 20%; */
+    overflow: hidden;
 }
+
+.comments_slider input{
+    display: none;
+}
+
+.comments_slider h1{
+    font-size: 36px;
+    margin-right: 30%;
+}
+
 .comment_box {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    /* gap: 5%; */
+    width: 300%;
+    background-color: #fff;
+    margin-left: 200%;
+
+    z-index: 3;
 }
 .comment {
+    
+    color: #314438;
+    font-family: Quicksand;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22.4px; /* 140% */
+    letter-spacing: 0.32px;
 }
+
+.comment svg{
+    margin-bottom: 10px;
+}
+
+.comment_labels{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.comment_labels label{
+    padding-bottom: 20px;
+    position: relative;
+}
+
+.cork_class{
+    position: absolute;
+    top: 50px;
+    left: -4px;
+    background-color: #FFF;
+    z-index: 4;
+    width: 184px;
+    height: 20px;
+    display: none;
+}
+
+.comment_underline{
+    width: 33.3%;
+    margin-left: -65%;
+    border-bottom: #8DC0D2 5px solid;
+    background-color: #fff;
+
+}
+
+
 .comments_cards {
+    /* background-color: aquamarine; */
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 20px;
 }
 .comment_card {
+    border-radius: 2px;
+    border: 1px solid rgba(49, 68, 56, 0.17);
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+}
+
+.card_photo {
+    margin-top: 20px;
+}
+.card_name {
+    margin-top: 10px;
+    color: #314438;
+
+    text-align: center;
+    font-family: Quicksand;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 19.6px; /* 140% */
+    letter-spacing: 0.28px;
+}
+.card_job_title {
+    color: #314438;
+
+    text-align: center;
+    font-family: Quicksand;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 19.6px; /* 140% */
+    letter-spacing: 0.28px;
+    opacity: 0.7;
+}
+.card_comment {
+    max-width: 189px;
+    margin-top: 35px;
+    color: #314438;
+    
+    text-align: center;
+    font-family: Quicksand;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 19.6px; /* 140% */    
+}
+
+
+
+#comment1:checked ~ .comment_box{
+    margin-left: 200%;
+    transition: all 0.6s ease;
+}
+
+
+#comment2:checked ~ .comment_box{
+    margin-left: 0%;
+    transition: all 0.6s ease;
+}
+
+
+#comment3:checked ~ .comment_box{
+    margin-left: -200%;
+    transition: all 0.6s ease;
+}
+
+#comment1:checked ~ .comment_underline{
+    margin-left: -65%;
+    transition: all 0.8s ease;
+}
+
+#comment2:checked ~ .comment_underline{
+    margin-left: 0%;
+    transition: all 0.8s ease;
+}
+
+#comment3:checked ~ .comment_underline{
+    margin-left: 65%;
+    transition: all 0.8s ease;
+}
+
+#comment1:checked ~ .comment_labels .cork2{
+    display: block;    
+
+}
+
+#comment3:checked ~ .comment_labels .cork2{
+display: block;    
+}
+
+
+#comment2:checked ~ .comment_labels .cork1{
+    display: block;
+}
+
+#comment2:checked ~ .comment_labels .cork3{
+    display: block;
 }
